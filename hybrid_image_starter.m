@@ -1,8 +1,11 @@
 close all; % closes all figures
+im1filename = ''
+im2filename = ''
+
 
 % read images and convert to single format
-im1 = im2single(imread('heads.jpg'));
-im2 = im2single(imread('tails.jpg'));
+im1 = im2single(imread(im1filename));
+im2 = im2single(imread(im2filename));
 im1 = rgb2gray(im1); % convert to grayscale
 im2 = rgb2gray(im2);
 figure(1), imagesc(log(abs(fftshift(fft2(im1)))))
